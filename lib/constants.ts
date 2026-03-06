@@ -1,0 +1,9 @@
+export const APP_NAME = "Offline POS Billing";
+export const APP_SHORT_NAME = "POS Billing";
+export const DB_NAME = "offline_pos_db";
+export const DB_VERSION = 1;
+export const BILL_SCAN_DEBOUNCE_MS = 800;
+export const DEFAULT_CURRENCY = "INR";
+export const DEFAULT_RECEIPT_PREFIX = "BILL";
+export const AUTH_META_KEY = "active";
+export const THEME_STORAGE_KEY = "pos_theme";

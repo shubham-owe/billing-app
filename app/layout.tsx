@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import "../styles/globals.css";
+import { Toaster } from "react-hot-toast";
+import "./globals.css";
+import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 
 export const metadata: Metadata = {
-  title: "Barcode Billing App",
-  description: "Barcode billing and invoicing with camera and USB scanner support"
+  title: "Offline POS Billing",
+  description: "Offline-first barcode billing app with IndexedDB",
+  manifest: "/manifest.json"
 };
 
 export default function RootLayout({
@@ -11,8 +14,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-100 text-slate-900 antialiased">
+      <body>
+        <ServiceWorkerRegister />
         {children}
+        <Toaster position="top-right" />
       </body>
     </html>
   );
